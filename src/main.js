@@ -111,4 +111,4 @@ class Api{
     }
 }
 
-Api.getUserInfo("nemuba1");
+Api.getUserInfo("nemuba");
