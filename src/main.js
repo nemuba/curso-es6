@@ -79,7 +79,7 @@ const soma = (a=2,b=3) => a+b;
 console.log(soma(2,8));
 
 */
-
+/** 
 const minhaPromise = () => new Promise((resolve,reject) => {
     setTimeout(() => {
         resolve('OK')
@@ -88,7 +88,7 @@ const minhaPromise = () => new Promise((resolve,reject) => {
 /** 
 minhaPromise().then(response => {
     console.log(response);
-});*/
+});
 
 async function executaPromise (){
     const response = await minhaPromise();
@@ -96,3 +96,19 @@ async function executaPromise (){
 }
 
 executaPromise();
+*/
+
+import axios from 'axios';
+
+class Api{
+    static async getUserInfo(username){
+        try {
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        } catch (error) {
+            console.warn("Erro na API");
+        }
+    }
+}
+
+Api.getUserInfo("nemuba1");
